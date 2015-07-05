@@ -187,6 +187,30 @@ body.no-scroll {
   }
 }
 
+.reel-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 40px;
+  z-index: 11;
+  color: white;
+
+  iframe {
+    display: block;
+    margin: auto;
+  }
+
+  .close-reel {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 30px;
+    border: none !important;
+  }
+}
+
 .breakdown {
   min-height: 600px;
   background: $grey;
