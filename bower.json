@@ -1,0 +1,8 @@
+{
+  "name": "Sohail-Md-Portfolio",
+  "description": "Portfolio",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.5"
+  }
+}
