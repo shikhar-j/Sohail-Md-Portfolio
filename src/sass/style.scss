@@ -21,14 +21,16 @@ h2 {
   font-size: 44px;
 }
 
-a {
+a,
+a.active {
   color: $anchor-color;
   text-decoration: none;
   transition: all 0.3s ease;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: $anchor-color;
+    border-bottom: 1px solid $anchor-color;
   }
 }
 
@@ -64,6 +66,44 @@ a {
 
 // Styles
 
+.navigation-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 50px;
+  font-size: 40px;
+  z-index: 11;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  .navigation a {
+    font-size: 30px;
+    margin: 10px 0;
+    display: inner-block;
+    border-bottom: 1px solid transparent;
+  }
+
+  .toggle-nav {
+    border: none !important;
+  }
+}
+
+body.no-scroll {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.page-overlay {
+  background: rgba(0,0,0,0.9);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  padding: 50px;
+  z-index: 10;
+}
+
 .title-heading {
   font-size: 66px;
   margin-bottom: 0;
@@ -79,7 +119,6 @@ a {
   background: transparent url(../img/header.png) no-repeat center bottom;
   position: relative;
   z-index: 2;
-  margin-top: 50px;
   padding-top: 150px;
   padding-left: 100px;
 
