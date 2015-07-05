@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  font-size: 44px;
+  font-size: 30px;
 }
 
 a,
@@ -105,24 +105,29 @@ body.no-scroll {
 }
 
 .title-heading {
-  font-size: 66px;
+  font-size: 30px;
   margin-bottom: 0;
 }
 
 .title-subheading {
+  font-size: 14px;
   letter-spacing: 5.2px;
   font-weight: normal;
 }
 
 .main-header {
-  height: 703px;
-  background: transparent url(../img/header.png) no-repeat center bottom;
+  min-height: 703px;
+  background: transparent url(../img/header.png) no-repeat 65% bottom;
   position: relative;
   z-index: 2;
   padding-top: 150px;
-  padding-left: 100px;
+  padding-left: 8%;
+  padding-bottom: 380px;
 
-  p { width: 600px; }
+  .container {
+    max-width: 65%;
+    margin: inherit;
+  }
 }
 
 .demoreel {
@@ -241,11 +246,12 @@ body.no-scroll {
 }
 
 .download {
-  height: 700px;
+  min-height: 700px;
   background: transparent url(../img/download.png) no-repeat center top;
   position: relative;
   z-index: 2;
   margin-top: -250px;
+  padding-bottom: 100px;
 
   .download-head {
     width: 100%;
@@ -297,13 +303,53 @@ body.no-scroll {
     &.btn .fa {
       padding-right: 15px;
     }
+  }
 
-    &.btn:first-child {
-      margin-right: 20px;
-    }
+  .btn {
+    display: block;
+    margin-bottom: 20px;
   }
 
   p {
     margin: 30px 0;
   }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 768px) {
+  .main-footer {
+    .btn:first-child {
+      margin-right: 20px;
+    }
+    .btn {
+      display: inline-block;
+    }
+  }
+}
+@media (min-width: 992px) {
+
+  .main-header {
+    background: transparent url(../img/header.png) no-repeat center bottom;
+
+    .container {
+      width: 50%;
+    }
+
+    padding-left: 150px;
+  }
+
+  .title-heading {
+    font-size: 66px;
+    margin-bottom: 0;
+  }
+
+  .title-subheading {
+    letter-spacing: 5.2px;
+    font-weight: normal;
+  }
+
+  h2 {
+    font-size: 44px;
+  }
+
 }
