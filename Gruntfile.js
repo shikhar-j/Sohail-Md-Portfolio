@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -8,21 +9,41 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: 'expanded'
+          style: 'compressed'
         },
         files: {
-          'css/style.css': 'css/sass/style.scss'
+          'assets/css/style.css': 'src/sass/style.scss'
+        }
+      }
+    },
+
+    uglify: {
+      options: {
+        mangle: false,
+        beautify: true,
+        compress: false
+      },
+      my_target: {
+        files: {
+          'assets/js/main.js': [
+            'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.min.js',
+            'src/js/core.js'
+          ]
         }
       }
     },
 
     watch: {
       sass: {
-        files: 'css/sass/style.scss',
+        files: 'src/sass/*.scss',
         tasks: 'sass'
+      },
+      uglify: {
+        files: 'src/js/*.js',
+        tasks: 'uglify'
       }
     }
   });
 
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('default', ['sass', 'uglify']);
 }
