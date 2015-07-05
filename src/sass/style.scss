@@ -24,6 +24,7 @@ h2 {
 a {
   color: $anchor-color;
   text-decoration: none;
+  transition: all 0.3s ease;
 
   &:hover {
     text-decoration: underline;
@@ -93,6 +94,7 @@ a {
   margin-top: -390px;
   color: white;
   padding-top: 400px;
+  overflow: hidden;
 
   a.play-button {
     color: white;
@@ -111,6 +113,33 @@ a {
     &:hover {
       background-color: rgba(255,255,255,0.3);
     }
+  }
+
+  .container {
+    position: relative;
+    z-index: 4;
+  }
+
+  .video-container,
+  .reel-bg-video,
+  .video-grid,
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .video-overlay {
+    z-index: 3;
+    background: transparent url(../img/video-overlay.png) no-repeat center top;
+    top: -3px;
+  }
+
+  .video-grid {
+    z-index: 2;
+    background: rgba(74,74,74,0.8) url(../img/dotgrid.png) repeat center center;
   }
 }
 
@@ -150,6 +179,7 @@ a {
 
     a span {
       position: absolute;
+      transition: all 0.3s ease;
       width: 100%;
       top: 0;
       left: 0;
@@ -157,7 +187,8 @@ a {
       bottom: 0;
       text-align: center;
       color: white;
-      display: none;
+      display: block;
+      opacity: 0;
       padding-top: 80px;
       background: rgba(255,255,255, 0.2);
       font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -165,7 +196,7 @@ a {
     }
 
     a:hover span {
-      display: block;
+      opacity: 1;
     }
   }
 }
