@@ -1,11 +1,88 @@
 // Import bootstrap styles
 @import 'bootstrap';
 
+// Typography Overrides
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $grey-dark;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 30px 0;
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 44px;
+}
+
+a {
+  color: $anchor-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: $anchor-color;
+  }
+}
+
+.btn {
+  text-transform: uppercase;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.btn-default {
+  color: $grey-dark;
+  border-color: $grey-dark;
+
+  &:hover {
+    color: white;
+    background-color: $grey-dark;
+  }
+}
+
+.btn-white {
+  color: white;
+  border-color: white;
+
+  &:hover {
+    color: $anchor-color;
+    background-color: white;
+  }
+}
+
+// ============
+
+// Styles
+
+.title-heading {
+  font-size: 66px;
+  margin-bottom: 0;
+}
+
+.title-subheading {
+  letter-spacing: 5.2px;
+  font-weight: normal;
+}
+
 .main-header {
   height: 703px;
   background: transparent url(../img/header.png) no-repeat center bottom;
   position: relative;
   z-index: 2;
+  margin-top: 50px;
+  padding-top: 150px;
+  padding-left: 100px;
+
+  p { width: 600px; }
 }
 
 .demoreel {
@@ -14,6 +91,27 @@
   position: relative;
   z-index: 1;
   margin-top: -390px;
+  color: white;
+  padding-top: 400px;
+
+  a.play-button {
+    color: white;
+    font-size: 50px;
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: block;
+    line-height: 100px;
+    text-align: center;
+    margin: 120px auto 0;
+    padding-left: 8px;
+    background-color: rgba(255,255,255,0.1);
+
+    &:hover {
+      background-color: rgba(255,255,255,0.3);
+    }
+  }
 }
 
 .breakdown {
@@ -21,10 +119,59 @@
   background: $grey;
   position: relative;
   z-index: 1;
+  padding-top: 90px;
+}
+
+.breakdown-container {
+  margin: 80px 0 300px 0;
+
+  .bd-item {
+    position: relative;
+    padding: 20px;
+
+    a {
+      width: 100%;
+      height: 130px;
+      background: $grey-dark;
+      display: block;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    a img {
+      position: absolute;
+      width: 100%;
+      height: 130px;
+      top: 0;
+      left: 0;
+      border: none;
+    }
+
+    a span {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      color: white;
+      display: none;
+      padding-top: 80px;
+      background: rgba(255,255,255, 0.2);
+      font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+    }
+
+    a:hover span {
+      display: block;
+    }
+  }
 }
 
 .download {
-  min-height: 602px;
+  height: 700px;
   background: transparent url(../img/download.png) no-repeat center top;
   position: relative;
   z-index: 2;
@@ -32,17 +179,61 @@
 
   .download-head {
     width: 100%;
-    height: 235px;
+    height: 195px;
     background: transparent url(../img/download-head.png) no-repeat center top;
     position: absolute;
     margin-top: -10px;
   }
+
+  h2 {
+    padding-top: 270px;
+  }
+}
+
+.download-icons {
+  .download-icon a:first-child {
+    display: block;
+    font-size: 60px;
+    color: $grey-dark;
+    width: 120px;
+    height: 120px;
+    margin: 20px auto 30px;
+    border: 2px solid $grey-dark;
+    border-radius: 50%;
+    line-height: 120px;
+
+    &:hover {
+      background-color: $grey-dark;
+      color: white;
+    }
+  }
 }
 
 .main-footer {
-  height: 377px;
+  height: 450px;
   background: transparent url(../img/footer.png) no-repeat center top;
   position: relative;
   z-index: 2;
   margin-top: -60px;
+  padding-top: 130px;
+  color: white;
+
+  a {
+    &.a-email {
+      color: white;
+      font-size: 18px;
+    }
+
+    &.btn .fa {
+      padding-right: 15px;
+    }
+
+    &.btn:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  p {
+    margin: 30px 0;
+  }
 }
