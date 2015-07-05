@@ -1,2 +1,48 @@
 // Import bootstrap styles
 @import 'bootstrap';
+
+.main-header {
+  height: 703px;
+  background: transparent url(../img/header.png) no-repeat center bottom;
+  position: relative;
+  z-index: 2;
+}
+
+.demoreel {
+  height: 850px;
+  background: transparent url(../img/reel.png) no-repeat center top;
+  position: relative;
+  z-index: 1;
+  margin-top: -390px;
+}
+
+.breakdown {
+  min-height: 600px;
+  background: $grey;
+  position: relative;
+  z-index: 1;
+}
+
+.download {
+  min-height: 602px;
+  background: transparent url(../img/download.png) no-repeat center top;
+  position: relative;
+  z-index: 2;
+  margin-top: -250px;
+
+  .download-head {
+    width: 100%;
+    height: 235px;
+    background: transparent url(../img/download-head.png) no-repeat center top;
+    position: absolute;
+    margin-top: -10px;
+  }
+}
+
+.main-footer {
+  height: 377px;
+  background: transparent url(../img/footer.png) no-repeat center top;
+  position: relative;
+  z-index: 2;
+  margin-top: -60px;
+}
