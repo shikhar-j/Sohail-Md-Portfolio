@@ -353,10 +353,10 @@ body.no-scroll {
 @media (min-width: 992px) {
 
   .main-header {
-    background: transparent url(../img/header.png) no-repeat center bottom;
+    background: transparent url(../img/header.png) no-repeat 60% bottom;
 
     .container {
-      width: 50%;
+      width: 60%;
     }
 
     padding-left: 150px;
@@ -376,4 +376,14 @@ body.no-scroll {
     font-size: 44px;
   }
 
+}
+
+@media (min-width: 1200px) {
+  .main-header {
+    background: transparent url(../img/header.png) no-repeat center bottom;
+
+    .container {
+      width: 50%;
+    }
+  }
 }
