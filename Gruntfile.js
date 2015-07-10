@@ -50,6 +50,7 @@ module.exports = function(grunt) {
     environments: {
       options: {
         local_path: 'dist',
+        zip_deploy: true
       },
       staging: {
         options: {
