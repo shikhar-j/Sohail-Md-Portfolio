@@ -1,5 +1,5 @@
 _S = window._S || {}
-_S.reel_url = "http://player.vimeo.com/video/128171814?autoplay=1";
+_S.reel_url = "http://player.vimeo.com/video/133119153?autoplay=1";
 
 _S.showOverlay = function(callback){
   callback = callback || function(){}

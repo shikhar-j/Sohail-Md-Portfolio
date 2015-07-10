@@ -135,9 +135,9 @@ body.no-scroll {
   background: transparent url(../img/reel.png) no-repeat center top;
   position: relative;
   z-index: 1;
-  margin-top: -390px;
+  margin-top: -420px;
   color: white;
-  padding-top: 400px;
+  padding-top: 420px;
   overflow: hidden;
 
   a.play-button {
@@ -359,7 +359,7 @@ body.no-scroll {
       width: 60%;
     }
 
-    padding-left: 150px;
+    padding-left: 16%;
   }
 
   .title-heading {
@@ -368,6 +368,7 @@ body.no-scroll {
   }
 
   .title-subheading {
+    font-size: 18px;
     letter-spacing: 5.2px;
     font-weight: normal;
   }

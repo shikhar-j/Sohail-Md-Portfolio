@@ -18,11 +18,6 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      options: {
-        mangle: false,
-        beautify: true,
-        compress: false
-      },
       my_target: {
         files: {
           'assets/js/main.js': [
