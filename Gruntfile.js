@@ -2,6 +2,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-ssh-deploy');
+  grunt.loadNpmTasks('grunt-exec');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -28,6 +30,12 @@ module.exports = function(grunt) {
       }
     },
 
+    exec: {
+      prep_dist: {
+        cmd: 'cp -f index.html dist/ && cp -rf assets dist/ && cp -rf bower_components dist/'
+      }
+    },
+
     watch: {
       sass: {
         files: 'src/sass/*.scss',
@@ -37,8 +45,25 @@ module.exports = function(grunt) {
         files: 'src/js/*.js',
         tasks: 'uglify'
       }
+    },
+
+    environments: {
+      options: {
+        local_path: 'dist',
+      },
+      staging: {
+        options: {
+          host: 'shikharjaiswal.com',
+          username: 'root',
+          privateKey: require('fs').readFileSync('/Users/shikharjaiswal/.ssh/id_rsa'),
+          deploy_path: '/',
+          current_symlink: '/var/www/html/sohail',
+          after_deploy: 'chmod 755 /var/www/html/sohail/assets/* && chmod 755 /var/www/html/sohail/assets/img/*'
+        }
+      }
     }
   });
 
   grunt.registerTask('default', ['sass', 'uglify']);
+  grunt.registerTask('deploy_staging', ['exec:prep_dist', 'ssh_deploy:staging']);
 }
