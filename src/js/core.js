@@ -68,7 +68,16 @@ _S.hideReel = function(){
   _S.hideOverlay(callback);
 }
 
+_S.setBreakdownHeight = function(){
+  width = $($('.bd-item a')[0]).width()
+  height = width * 0.5625
+
+  $('.bd-item a').height(height+'px')
+}
+
 $(document).ready(function(){
+  _S.setBreakdownHeight()
+
   $('.toggle-nav').on('click', function(e){
     e.preventDefault();
 
@@ -118,4 +127,8 @@ $(document).ready(function(){
       };
     }
   });
+
+  $(window).on('resize', function(e) {
+    _S.setBreakdownHeight()
+  })
 })

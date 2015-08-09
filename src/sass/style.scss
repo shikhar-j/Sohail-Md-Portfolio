@@ -114,13 +114,13 @@ body.no-scroll {
 }
 
 .title-heading {
-  font-size: 26px;
+  font-size: 24px;
   margin-bottom: 0;
 }
 
 .title-subheading {
-  font-size: 9px;
-  letter-spacing: 4px;
+  font-size: 10px;
+  letter-spacing: 2px;
   font-weight: normal;
 }
 
@@ -233,11 +233,11 @@ body.no-scroll {
   background: $grey;
   position: relative;
   z-index: 1;
-  padding-top: 90px;
+  padding-top: 80px;
 }
 
 .breakdown-container {
-  margin: 80px 0 300px 0;
+  margin: 60px 0 300px 0;
 
   .bd-item {
     position: relative;
@@ -325,7 +325,7 @@ body.no-scroll {
 }
 
 .main-footer {
-  height: 450px;
+  height: 400px;
   background: transparent url(../img/footer.png) no-repeat center top;
   position: relative;
   z-index: 2;
@@ -356,42 +356,42 @@ body.no-scroll {
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 768px) {
-  .main-footer {
-    .btn:first-child {
-      margin-right: 20px;
-    }
-    .btn {
-      display: inline-block;
-    }
-  }
-}
-@media (min-width: 992px) {
-
   .main-header {
-    background: transparent url(../img/header.png) no-repeat 60% bottom;
+    background: transparent url(../img/header.png) no-repeat 56% bottom;
+    min-height: 720px;
+    padding-top: 135px;
+    padding-left: 12%;
 
     .container {
       width: 60%;
     }
-
-    padding-left: 16%;
   }
 
   .title-heading {
-    font-size: 3em;
-    margin-bottom: 0;
+    font-size: 2em;
   }
 
   .title-subheading {
-    font-size: 18px;
-    letter-spacing: 5.2px;
-    font-weight: normal;
+    font-size: 1.2em;
   }
 
-  h2 {
-    font-size: 44px;
+  .view-reel-shortcut a {
+    font-size: 4.5em;
   }
 
+  .demoreel {
+    margin-top: -330px;
+  }
+
+  .main-footer {
+    .btn:last-child {
+      margin-right: 0;
+    }
+    .btn {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -399,7 +399,61 @@ body.no-scroll {
     background: transparent url(../img/header.png) no-repeat center bottom;
 
     .container {
-      width: 50%;
+      width: 58%;
+    }
+  }
+
+  .title-heading {
+    font-size: 3em;
+  }
+
+  .title-subheading {
+    font-size: 1.4em;
+  }
+
+  .view-reel-shortcut a {
+    font-size: 5em;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  .download {
+    margin-top: -250px;
+
+    .download-head {
+      margin-top: -10px;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .main-header {
+    padding-top: 120px;
+    padding-left: 16%;
+    min-height: 760px;
+  }
+
+  .demoreel {
+    margin-top: -400px;
+    padding-top: 380px;
+    height: 730px;
+  }
+
+  .navigation-container {
+    font-size: 24px;
+
+    .navigation a {
+      font-size: 24px;
+    }
+  }
+
+  .download {
+    margin-top: -250px;
+
+    .download-head {
+      margin-top: -10px;
     }
   }
 }
