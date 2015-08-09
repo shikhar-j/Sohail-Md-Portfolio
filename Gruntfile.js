@@ -50,7 +50,7 @@ module.exports = function(grunt) {
     environments: {
       options: {
         local_path: 'dist',
-        zip_deploy: true
+        zip_deploy: false
       },
       staging: {
         options: {
@@ -61,10 +61,21 @@ module.exports = function(grunt) {
           current_symlink: '/var/www/html/sohail',
           after_deploy: 'chmod 755 /var/www/html/sohail/assets/* && chmod 755 /var/www/html/sohail/assets/img/*'
         }
+      },
+      production: {
+        options: {
+          host: 'sohailvfx.com',
+          username: 'root',
+          privateKey: require('fs').readFileSync('/Users/shikharjaiswal/.ssh/id_rsa'),
+          deploy_path: '/',
+          current_symlink: '/var/www/html',
+          after_deploy: 'chmod 755 /var/www/html/assets/* && chmod 755 /var/www/html/assets/img/*'
+        }
       }
     }
   });
 
   grunt.registerTask('default', ['sass', 'uglify']);
   grunt.registerTask('deploy_staging', ['exec:prep_dist', 'ssh_deploy:staging']);
+  grunt.registerTask('deploy_production', ['exec:prep_dist', 'ssh_deploy:production']);
 }

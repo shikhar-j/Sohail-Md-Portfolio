@@ -22,7 +22,8 @@ h2 {
 }
 
 a,
-a.active {
+a.active,
+a:focus {
   color: $anchor-color;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -70,20 +71,28 @@ a.active {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 50px;
-  font-size: 40px;
+  padding: 25px;
+  font-size: 18px;
   z-index: 11;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+  .navigation {
+    margin-top: 10px;
+  }
+
   .navigation a {
-    font-size: 30px;
-    margin: 10px 0;
-    display: inner-block;
+    font-size: 18px;
+    margin: 5px 0;
+    display: inline-block;
     border-bottom: 1px solid transparent;
   }
 
   .toggle-nav {
     border: none !important;
+  }
+
+  .nav-close {
+    font-size: 30px;
   }
 }
 
@@ -105,39 +114,46 @@ body.no-scroll {
 }
 
 .title-heading {
-  font-size: 30px;
+  font-size: 26px;
   margin-bottom: 0;
 }
 
 .title-subheading {
-  font-size: 14px;
-  letter-spacing: 5.2px;
+  font-size: 9px;
+  letter-spacing: 4px;
   font-weight: normal;
 }
 
 .main-header {
-  min-height: 703px;
-  background: transparent url(../img/header.png) no-repeat 65% bottom;
+  min-height: 500px;
+  background: transparent url(../img/header.png) no-repeat 8% bottom;
   position: relative;
   z-index: 2;
-  padding-top: 150px;
+  padding-top: 100px;
   padding-left: 8%;
-  padding-bottom: 380px;
+  padding-bottom: 100px;
 
   .container {
-    max-width: 65%;
+    max-width: 90%;
     margin: inherit;
   }
 }
 
+.view-reel-shortcut a {
+  color: $grey-dark;
+  font-size: 3.5em;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
 .demoreel {
-  height: 850px;
+  height: 640px;
   background: transparent url(../img/reel.png) no-repeat center top;
   position: relative;
   z-index: 1;
-  margin-top: -420px;
+  margin-top: -230px;
   color: white;
-  padding-top: 420px;
+  padding-top: 300px;
   overflow: hidden;
 
   a.play-button {
@@ -150,7 +166,7 @@ body.no-scroll {
     display: block;
     line-height: 100px;
     text-align: center;
-    margin: 120px auto 0;
+    margin: 80px auto 0;
     padding-left: 8px;
     background-color: rgba(255,255,255,0.1);
 
@@ -193,19 +209,20 @@ body.no-scroll {
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 40px;
+  padding: 20px;
   z-index: 11;
   color: white;
 
   iframe {
     display: block;
     margin: auto;
+    background: black;
   }
 
   .close-reel {
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 10px;
     font-size: 30px;
     border: none !important;
   }
@@ -228,7 +245,7 @@ body.no-scroll {
 
     a {
       width: 100%;
-      height: 130px;
+      height: 188px;
       background: $grey-dark;
       display: block;
       color: white;
@@ -239,7 +256,6 @@ body.no-scroll {
     a img {
       position: absolute;
       width: 100%;
-      height: 130px;
       top: 0;
       left: 0;
       border: none;
@@ -274,15 +290,15 @@ body.no-scroll {
   background: transparent url(../img/download.png) no-repeat center top;
   position: relative;
   z-index: 2;
-  margin-top: -250px;
+  margin-top: -300px;
   padding-bottom: 100px;
 
   .download-head {
     width: 100%;
     height: 195px;
-    background: transparent url(../img/download-head.png) no-repeat center top;
+    background: transparent url(../img/download-head.png) no-repeat 90%;
     position: absolute;
-    margin-top: -10px;
+    margin-top: -40px;
   }
 
   h2 {
@@ -291,7 +307,7 @@ body.no-scroll {
 }
 
 .download-icons {
-  .download-icon a:first-child {
+  .download-icon .icon:first-child {
     display: block;
     font-size: 60px;
     color: $grey-dark;
@@ -301,11 +317,10 @@ body.no-scroll {
     border: 2px solid $grey-dark;
     border-radius: 50%;
     line-height: 120px;
+  }
 
-    &:hover {
-      background-color: $grey-dark;
-      color: white;
-    }
+  h4 {
+    margin: 10px;
   }
 }
 
@@ -363,7 +378,7 @@ body.no-scroll {
   }
 
   .title-heading {
-    font-size: 66px;
+    font-size: 3em;
     margin-bottom: 0;
   }
 
@@ -387,4 +402,59 @@ body.no-scroll {
       width: 50%;
     }
   }
+}
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  60% {
+    -moz-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  60% {
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
 }

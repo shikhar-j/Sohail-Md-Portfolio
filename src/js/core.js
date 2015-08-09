@@ -1,5 +1,5 @@
 _S = window._S || {}
-_S.reel_url = "http://player.vimeo.com/video/133119153?autoplay=1";
+_S.reel_url = "http://player.vimeo.com/video/134927853?autoplay=1";
 
 _S.showOverlay = function(callback){
   callback = callback || function(){}
@@ -23,7 +23,9 @@ _S.hideOverlay = function(callback){
 }
 
 _S.showNavigation = function(){
-  $('.toggle-nav .fa').removeClass('fa-bars').addClass('fa-times');
+  $('.toggle-nav .nav-text').addClass('hidden');
+  $('.toggle-nav .nav-close').removeClass('hidden');
+
   callback = function(){
     $('.navigation').hide().removeClass('hidden').show();
     $('.toggle-nav').addClass('active');
@@ -33,7 +35,8 @@ _S.showNavigation = function(){
 }
 
 _S.hideNavigation = function(){
-  $('.toggle-nav .fa').addClass('fa-bars').removeClass('fa-times');
+  $('.toggle-nav .nav-close').addClass('hidden');
+  $('.toggle-nav .nav-text').removeClass('hidden');
   callback = function(){
     $('.navigation').hide().addClass('hidden');
     $('.toggle-nav').removeClass('active');
@@ -44,8 +47,11 @@ _S.hideNavigation = function(){
 
 _S.showReel = function(){
   callback = function(){
+    width = $(window).width() - 40
+    height = width * 0.5625
+
     $('.reel-video').hide().removeClass('hidden').show();
-    $('.reel-video iframe').attr('src', _S.reel_url);
+    $('.reel-video iframe').show().attr('src', _S.reel_url).width(width + 'px').height(height + 'px');
     $('.toggle-nav').addClass('hidden');
   };
 
@@ -55,7 +61,7 @@ _S.showReel = function(){
 _S.hideReel = function(){
   callback = function(){
     $('.reel-video').hide().addClass('hidden');
-    $('.reel-video iframe').attr('src', '');
+    $('.reel-video iframe').hide().attr('src', '');
     $('.toggle-nav').removeClass('hidden');
   };
 
@@ -74,7 +80,9 @@ $(document).ready(function(){
 
   });
 
-  $('.navigation a').on('click', function(e){
+  $('.view-reel-shortcut a').tooltip();
+
+  $('.navigation a, .view-reel-shortcut a').on('click', function(e){
     e.preventDefault();
 
     target = $(e.currentTarget).attr('href');
