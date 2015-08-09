@@ -67,6 +67,21 @@ a:focus {
 
 // Styles
 
+.header-email {
+  color: $grey-dark;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+
+  a, a:hover, a:visited {
+    color: $grey-dark;
+  }
+
+  a:hover {
+    border-bottom-color: $grey-dark;
+  }
+}
+
 .navigation-container {
   position: fixed;
   top: 0;
@@ -114,7 +129,7 @@ body.no-scroll {
 }
 
 .title-heading {
-  font-size: 24px;
+  font-size: 30px;
   margin-bottom: 0;
 }
 
@@ -368,7 +383,7 @@ body.no-scroll {
   }
 
   .title-heading {
-    font-size: 2em;
+    font-size: 2.6em;
   }
 
   .title-subheading {
@@ -397,6 +412,7 @@ body.no-scroll {
 @media (min-width: 1200px) {
   .main-header {
     background: transparent url(../img/header.png) no-repeat center bottom;
+    font-size: 18px;
 
     .container {
       width: 58%;
@@ -425,6 +441,10 @@ body.no-scroll {
     .download-head {
       margin-top: -10px;
     }
+  }
+
+  .navigation-container {
+    font-size: 24px;
   }
 }
 

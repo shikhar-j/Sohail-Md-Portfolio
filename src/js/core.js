@@ -1,6 +1,9 @@
 _S = window._S || {}
 _S.reel_url = "http://player.vimeo.com/video/134927853?autoplay=1";
 
+_S.ratio1 = 405/720;
+_S.ratio2 = 720/405;
+
 _S.showOverlay = function(callback){
   callback = callback || function(){}
   $('body').addClass('no-scroll');
@@ -47,8 +50,16 @@ _S.hideNavigation = function(){
 
 _S.showReel = function(){
   callback = function(){
-    width = $(window).width() - 40
-    height = width * 0.5625
+    max_width = $(window).width();
+    max_height = $(window).height() - 140;
+
+    width = parseInt(max_width - 40);
+    height = parseInt(width * _S.ratio1);
+
+    if(height >= max_height) {
+      height = parseInt(max_height);
+      width = parseInt(height * _S.ratio2);
+    }
 
     $('.reel-video').hide().removeClass('hidden').show();
     $('.reel-video iframe').show().attr('src', _S.reel_url).width(width + 'px').height(height + 'px');
