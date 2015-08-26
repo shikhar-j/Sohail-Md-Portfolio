@@ -72,13 +72,19 @@ a:focus {
   position: absolute;
   right: 25px;
   top: 25px;
+  text-align: right;
 
   a, a:hover, a:visited {
     color: $grey-dark;
+    display: block;
   }
 
   a:hover {
     border-bottom-color: $grey-dark;
+  }
+
+  .bul {
+    display: none;
   }
 }
 
@@ -162,13 +168,13 @@ body.no-scroll {
 }
 
 .demoreel {
-  height: 640px;
+  height: 675px;
   background: transparent url(../img/reel.png) no-repeat center top;
   position: relative;
   z-index: 1;
   margin-top: -230px;
   color: white;
-  padding-top: 300px;
+  padding-top: 335px;
   overflow: hidden;
 
   a.play-button {
@@ -340,7 +346,7 @@ body.no-scroll {
 }
 
 .main-footer {
-  height: 400px;
+  min-height: 400px;
   background: transparent url(../img/footer.png) no-repeat center top;
   position: relative;
   z-index: 2;
@@ -349,7 +355,7 @@ body.no-scroll {
   color: white;
 
   a {
-    &.a-email {
+    &.a-link {
       color: white;
       font-size: 18px;
     }
@@ -382,6 +388,16 @@ body.no-scroll {
     }
   }
 
+  .header-email {
+    a, a:hover, a:visited {
+      display: inline;
+    }
+
+    .bul {
+      display: inline;
+    }
+  }
+
   .title-heading {
     font-size: 2.6em;
   }
@@ -411,7 +427,7 @@ body.no-scroll {
 
 @media (min-width: 1200px) {
   .main-header {
-    background: transparent url(../img/header.png) no-repeat center bottom;
+    background: transparent url(../img/header.png) no-repeat center 35px;;
     font-size: 18px;
 
     .container {
